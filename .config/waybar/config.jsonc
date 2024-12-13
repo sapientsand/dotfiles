@@ -17,6 +17,7 @@
         "idle_inhibitor",
         "pulseaudio",
         "network",
+	"battery",
         "cpu",
         "memory",
         "clock",
