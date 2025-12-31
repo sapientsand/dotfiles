@@ -1,0 +1,76 @@
+@define-color bg-color #292929;
+@define-color fg-color #ffffff
+@define-color desc-color #cccccc;
+
+window {
+  background: transparent;
+}
+
+box.main {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px solid @fg-color;
+  background-color: @bg-color;
+  box-shadow: 0 0 5px black;
+  color: #bbbbbb;
+}
+
+
+text {
+  min-height: 30px;
+  padding: 5px;
+  border-radius: 0px;
+  color: @fg-color;
+  font-family: "Geist", sans-serif;
+}
+
+.matches {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+}
+
+box.plugin:first-child {
+  margin-top: 5px;
+}
+
+box.plugin.info {
+  min-width: 200px;
+}
+
+list.plugin {
+  background-color: @bg-color;
+}
+
+label.match.description {
+  font-size: 10px;
+  font-family: "Geist", sans-serif;
+}
+
+label.plugin.info {
+  font-size: 14px;
+  color: @desc-color;
+  font-family: "Geist", sans-serif;
+}
+
+.match {
+  background: transparent;
+  color: @fg-color;
+  font-family: "Geist", sans-serif;
+}
+
+.match:selected {
+  border-left: 4px solid @theme_selected_bg_color;
+  background: @292929;
+  animation: fade 0.1s linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
