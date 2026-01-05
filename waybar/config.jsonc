@@ -20,7 +20,8 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/mode"
+        "hyprland/mode",
+	"niri/workspaces"
     ],
     "modules-center": [
         "hyprland/window"
