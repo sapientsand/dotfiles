@@ -41,12 +41,16 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Resize windows with mainMod + shift + j/k
+-- move windows between columts with mainMod + shift + h/l
+hl.bind(mainMod .. " + SHIFT + h", hl.dsp.layout("swapcol l"))
 hl.bind(mainMod .. " + SHIFT + j ", hl.dsp.layout("colresize -conf"))
 hl.bind(mainMod .. " + SHIFT + k ", hl.dsp.layout("colresize +conf"))
-
--- Combine windows into a previous column or move them to a dedicated column
-hl.bind(mainMod .. " + SHIFT + bracketleft", hl.dsp.layout("consume"))
-hl.bind(mainMod .. " + SHIFT + bracketright", hl.dsp.layout("expel"))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.layout("swapcol r"))
+hl.bind(mainMod .. " + CTRL + h", hl.dsp.layout("consume"))
+hl.bind(mainMod .. " + CTRL + l", hl.dsp.layout("expel"))
+-- Full size column and fullscreen binds
+hl.bind(mainMod .. " + f ", hl.dsp.layout("colresize 1.0"))
+hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.fullscreen({ toggle }))
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(
 	"XF86AudioRaiseVolume",
