@@ -3,8 +3,7 @@ local terminal = "kitty"
 local fileManager = "dolphin"
 local screenshot = "hyprshot -m region -o ~/Pictures/screencaps/current"
 local browser = "firefox"
-local menu = "qs -c noctalia-shell ipc call launcher toggle"
-
+local menu = "noctalia msg panel-toggle launcher"
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
