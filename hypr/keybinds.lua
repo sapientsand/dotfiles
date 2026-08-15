@@ -50,7 +50,10 @@ hl.bind(mainMod .. " + CTRL + h", hl.dsp.layout("consume"))
 hl.bind(mainMod .. " + CTRL + l", hl.dsp.layout("expel"))
 -- Full size column and fullscreen binds
 hl.bind(mainMod .. " + f ", hl.dsp.layout("colresize 1.0"))
-hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.fullscreen({ toggle }))
+-- Fake fullscreen because clients deserve nothing
+if hl.dsp.window.fullscreen({ internal == 2, client == 0 })
+then hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.fullscreen({internal = 0, client = 0})) 
+else hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.fullscreen({internal = 2, client = 0})) end
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(
 	"XF86AudioRaiseVolume",
